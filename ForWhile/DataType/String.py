@@ -1,34 +1,36 @@
 truyen_kieu="""
-    1. Trăm năm trong cõi người ta,
+ Buồn trông cửa bể chiều hôm,
 
-Chữ tài chữ mệnh khéo là ghét nhau.
+Thuyền ai thấp thoáng cánh buồm xa xa?
 
-Trải qua một cuộc bể dâu,
+Buồn trông ngọn nước mới sa,
 
-Những điều trông thấy mà đau đớn lòng.
+Hoa trôi man mác biết là về đâu?
 
-5. Lạ gì bỉ sắc tư phong,
+Buồn trông nội cỏ rầu rầu,
 
-Trời xanh quen thói má hồng đánh ghen.
+Chân mây mặt đất một màu xanh xanh.
 
-Cảo thơm lần giở trước đèn
+Buồn trông gió cuốn mặt duềnh,
 
-Phong tình cổ lục còn truyền sử xanh.
-
-Rằng năm Gia Tĩnh triều Minh,
-
-10. Bốn phương phẳng lặng, hai kinh vững vàng.
-
-Có nhà viên ngoại họ Vương,
-
-Gia tư nghĩ cũng thường thường bực trung.
-
-Một trai con thứ rốt lòng,
-
-Vương Quan là chữ, nối dòng nho gia.
+Ầm ầm tiếng sóng kêu quanh ghế ngồi.
 """
 #Đếm tổng số từ trong đoạn thơ trên
 #Đếm số lần xuất hiện của từng từ
 
 words=[w.strip() for w in truyen_kieu.split()]
+print(words)
 print(f"Tổng số từ={len(words)}")
+
+# Khởi tạo biến kiểu từ điển
+words_count ={}
+# Xét từng từ trong ds
+for w in words:
+    # Nếu từ ch có trong từ điển
+    # Đưa từ này vào từ điển, khơi tạo sl=1
+    if w not in words_count:
+        words_count[w]=1
+    #Ngược lại, nếu từ đã có trong từ điển thì tổng st tăng
+    else:
+        words_count[w]+=1
+print(words_count)

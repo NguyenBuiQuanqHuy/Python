@@ -34,3 +34,10 @@ for w in words:
     else:
         words_count[w]+=1
 print(words_count)
+
+#Display result
+for w in words_count:
+    print(w,words_count[w])
+
+for k,v in words_count.items():
+    print(k,':',v)

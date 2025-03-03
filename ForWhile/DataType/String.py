@@ -41,3 +41,8 @@ for w in words_count:
 
 for k,v in words_count.items():
     print(k,':',v)
+
+#Từ nào xuất hiện nhiều nhất
+sorted_dict={k:v for k,v in \
+                   sorted(words_count.items(),key=lambda item: item[1],reverse=True )}
+print(list(sorted_dict.items())[0])

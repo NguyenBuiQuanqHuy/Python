@@ -1,14 +1,15 @@
-"""
-Kiểm tra số đẹp
-"""
-chuoi=input()
-complex_list=eval(chuoi)
-integer_list=[]
-sum=0
+def find_vigenere_key(ciphertext, plaintext):
+    key_stream = [(ord(c) - ord(p)) % 26 for c, p in zip(ciphertext, plaintext)]
+    key_chars = ''.join(chr(k + ord('A')) for k in key_stream)
 
-for i in complex_list:
-    if type(i) is int:
-        integer_list.append(i)
-        sum+=i
-print(integer_list)
-print(sum)
+    for key_len in range(2, len(key_chars) + 1):
+        if key_chars[:key_len] == key_chars[key_len:2 * key_len]:
+            return key_chars[:key_len]
+
+    return key_chars
+
+
+ciphertext = input().strip()
+plaintext = input().strip()
+
+print(find_vigenere_key(ciphertext, plaintext))

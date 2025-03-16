@@ -1,18 +1,18 @@
-# # Nhập chuỗi từ bàn phím
-# chuoi = input("Nhập dãy từ (cách nhau bởi dấu phẩy): ")
-#
-# # Tách chuỗi thành danh sách các từ
-# ds_tu = chuoi.split()
-# print(ds_tu)
-# # Sắp xếp danh sách theo thứ tự alphabet
-# ds_tu.sort()
-#
-# # Ghép lại thành chuỗi với dấu phẩy
-# ket_qua = ", ".join(ds_tu)
-#
-# # In kết quả
-# print(ds_tu)
-# print("Dãy từ sau khi sắp xếp:", ket_qua)
+# Nhập chuỗi từ bàn phím
+chuoi = input("Nhập dãy từ (cách nhau bởi dấu phẩy): ")
+
+# Tách chuỗi thành danh sách các từ
+ds_tu = chuoi.split()
+print(ds_tu)
+# Sắp xếp danh sách theo thứ tự alphabet
+ds_tu.sort()
+
+# Ghép lại thành chuỗi với dấu phẩy
+ket_qua = ", ".join(ds_tu)
+
+# In kết quả
+print(ds_tu)
+print("Dãy từ sau khi sắp xếp:", ket_qua)
 
 n=int(input())
 list_of_lists=[]

@@ -1,14 +1,14 @@
 fruits=["apple","banana","orange","apple","kiwi","lemon"]
 
-# for f in fruits:
-#     print(f)
-# fruit_set=set(fruits)
-# print(fruit_set)
-#
-# fruit_set.add("durian")
-# fruit_set.add("apple")
-# print(fruit_set)
+for f in fruits:
+    print(f)
+fruit_set=set(fruits)
+print(fruit_set)
 
+fruit_set.add("durian")
+fruit_set.add("apple")
+print(fruit_set)
+#
 # s1={1,2,3,4}
 # s2={3,4,5,6}
 #

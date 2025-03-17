@@ -4,7 +4,7 @@ from collections import defaultdict
 
 class Shape:
     def getArea(self):
-        raise NotImplementedError("Subclass must implement abstract method")
+        raise NotImplementedError()
 
 
 class Rectangle(Shape):
@@ -40,43 +40,29 @@ class Square(Rectangle):
         super().__init__(side, side)
 
 
-while True:
-    try:
-        n = int(input("Nhập số lượng hình vẽ (n > 5): "))
-        if n > 5:
-            break
-        print("Vui lòng nhập số lớn hơn 5.")
-    except ValueError:
-        print("Vui lòng nhập một số nguyên hợp lệ.")
-
-shapes = []
-for i in range(n):
-    while True:
-        shape_type = input(f"Nhập loại hình vẽ thứ {i + 1} (Rectangle, Circle, Triangle, Square): ").strip()
-        if shape_type == "Rectangle":
-            w = float(input("Nhập chiều rộng: "))
-            h = float(input("Nhập chiều cao: "))
-            shapes.append(Rectangle(w, h))
-            break
-        elif shape_type == "Circle":
-            r = float(input("Nhập bán kính: "))
-            shapes.append(Circle(r))
-            break
-        elif shape_type == "Triangle":
-            a = float(input("Nhập cạnh a: "))
-            b = float(input("Nhập cạnh b: "))
-            c = float(input("Nhập cạnh c: "))
-            if a + b > c and a + c > b and b + c > a:
-                shapes.append(Triangle(a, b, c))
-                break
-            else:
-                print("Ba cạnh không hợp lệ, vui lòng nhập lại.")
-        elif shape_type == "Square":
-            side = float(input("Nhập cạnh: "))
-            shapes.append(Square(side))
-            break
+def parse_shape(input_str):
+    name, values = input_str.split("[")
+    values = list(map(int, values.strip("]").split(",")))
+    if name == "Rectangle" and len(values) == 2:
+        return Rectangle(*values)
+    elif name == "Circle" and len(values) == 1:
+        return Circle(*values)
+    elif name == "Triangle" and len(values) == 3:
+        a, b, c = sorted(values)
+        if a + b > c:
+            return Triangle(a, b, c)
         else:
-            print("Loại hình không hợp lệ, vui lòng nhập lại.")
+            return Triangle(a, b, a + b - 1)
+    elif name == "Square" and len(values) == 1:
+        return Square(*values)
+    return None
+
+
+shape_inputs = [
+    "Rectangle[5,10]", "Circle[7]", "Triangle[3,4,5]", "Square[6]", "Rectangle[8,3]", "Circle[4]", "Triangle[5,5,6]"
+]
+
+shapes = [parse_shape(inp) for inp in shape_inputs if parse_shape(inp) is not None]
 
 shape_counts = defaultdict(int)
 shape_max_areas = defaultdict(lambda: None)

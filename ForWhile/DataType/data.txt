@@ -1,0 +1,2 @@
+Đây là nội dung thử nghiệm để mã hóa và giải mã bằng thuật toán DES, TripleDES, và AES trong Python.
+Chương trình sẽ mã hóa file này và sau đó giải mã lại để kiểm tra tính chính xác.

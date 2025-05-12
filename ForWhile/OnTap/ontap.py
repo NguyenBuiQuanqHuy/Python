@@ -18,16 +18,16 @@
 # print("số lượng ký tư: ",ky_tudb)
 # print("đảo ngược in hoa: ",d[::-1])
 
-# #Câu 2
-# n=list(map(int,input("Nhập n số nguyên: ").split()))
-# while len(n)<=5:
-#     n = list(map(int, input("Nhập lại n số nguyên: ").split()))
-# tong_le=sum(x for x in n if x%2!=0)
-# print("tổng lẻ:",sum(x for x in n if x%2!=0))
-# print("thứ tự giảm dần:",sorted(n,reverse=True))
-#
-# tu_dien={x:n.count(x) for x in n}
-# print(tu_dien)
+#Câu 2
+n=list(map(int,input("Nhập n số nguyên: ").split()))
+while len(n)<=5:
+    n = list(map(int, input("Nhập lại n số nguyên: ").split()))
+tong_le=sum(x for x in n if x%2!=0)
+print("tổng lẻ:",sum(x for x in n if x%2!=0))
+print("thứ tự giảm dần:",sorted(n,reverse=True))
+
+tu_dien={x:n.count(x) for x in n}
+print(tu_dien)
 
 #Câu 3
 class Nguoi:

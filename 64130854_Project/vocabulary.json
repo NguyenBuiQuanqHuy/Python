@@ -1,0 +1,30 @@
+{
+    "animals": [
+        {
+            "word": "cat",
+            "meaning": "con mèo"
+        },
+        {
+            "word": "dog",
+            "meaning": "con chó"
+        },
+        {
+            "word": "elephant",
+            "meaning": "con voi"
+        }
+    ],
+    "colors": [
+        {
+            "word": "red",
+            "meaning": "màu đỏ"
+        },
+        {
+            "word": "blue",
+            "meaning": "màu xanh dương"
+        },
+        {
+            "word": "green",
+            "meaning": "màu xanh lá"
+        }
+    ]
+}
